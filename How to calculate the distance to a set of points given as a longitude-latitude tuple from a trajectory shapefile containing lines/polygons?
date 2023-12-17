@@ -1,0 +1,39 @@
+How to calculate the distance to a set of points given as a longitude-latitude tuple from a trajectory shapefile containing lines/polygons?
+
+
+Code1:
+
+import pandas as pd
+import geopandas as gpd
+
+
+# The 2021 Hurricane Ida 2021 track line. From here:# https://www.nhc.noaa.gov/gis/best_track/al092021_best_track.zip
+
+track_line = gpd.read_file('./AL092021_lin.shp')
+#-------------
+cities = [
+          {'city':'New York','lat' : 40.6,'lon' : -74.0},
+          {'city':'Nashville','lat' : 36.1,'lon' : -86.7},
+          {'city':'New Orleans','lat' : 29.9,'lon' : -90.0}
+         ]
+
+# List to data.frame
+cities_df = pd.DataFrame(cities)
+
+# data.frame to geo data.frame
+cities_geodf = gpd.GeoDataFrame(cities_df, geometry=gpd.points_from_xy(cities_df['lon'], cities_df['lat'], crs='EPSG:4326'))
+
+#-------------
+# Convert both line and points to the same projected CRS. This ensures the underlying unit of measure is meters, and any distance calculations will be accurate.
+# 5072 is Conus Albers projection for the USA, a good choice since the track line goes across 20+ lines of longitude and 30+ of latitude. 
+# Other regions of the world will need to adjust the CRS common_crs = 'EPSG:5072'
+
+track_line = track_line.to_crs(common_crs)
+cities_geodf = cities_geodf.to_crs(common_crs)
+
+# The track line shapefile actually contains several lines, each of which describe the hurricane strength at the time. To measure the shortest distance from the track to each city,
+# do a union of all tracks into a single line.
+single_track_line = track_line.unary_union
+
+# Measure and save the distance to each city.
+cities_geodf['distance_km'] = cities_geodf.distance(single_track_line) / 1000
