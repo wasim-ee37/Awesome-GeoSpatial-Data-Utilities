@@ -1,0 +1,71 @@
+How to find the pixel value of a raster layer overalapping with a given shapefile using OGR/GDAL without using numpy?
+Requirement: To avoid reading the entire raster into memory, as the given raster is very, very large in volume (too large to fit into memory).
+
+Code1:
+
+from math import floor
+from osgeo import gdal,ogr
+import struct
+
+raster_geotiff_filename = 'test.tif'
+vector_shp_filename = 'test.shp'
+
+src_ds=gdal.Open(raster_geotiff_filename) 
+gt_forward=src_ds.GetGeoTransform()
+gt_reverse=gdal.InvGeoTransform(gt_forward)
+rb=src_ds.GetRasterBand(1)
+
+ds=ogr.Open(vector_shp_filename)
+lyr=ds.GetLayer()
+li_values = list()
+for feat in lyr:
+    geom = feat.GetGeometryRef()
+    feat_id = feat.GetField('id_points')
+    mx,my=geom.GetX(), geom.GetY()  #coord in map units
+
+    #Convert from map to pixel coordinates.
+    px, py = gdal.ApplyGeoTransform(gt_reverse, mx, my)
+    px = floor(px) #x pixel
+    py = floor(py) #y pixel
+
+    structval=rb.ReadRaster(px,py,1,1,buf_type=gdal.GDT_UInt16) #Assumes 16 bit int aka 'short'
+    intval = struct.unpack('h' , structval) #use the 'short' format code (2 bytes) not int (4 bytes)
+    li_values.append([feat_id, intval[0]])
+    print intval[0] #intval is a tuple, length=1 as we only asked for 1 pixel value
+
+with open(r'/path.csv', 'w') as csvfile:
+    wr = csv.writer(csvfile)
+    wr.writerows(li_values)
+
+Code2:
+
+from math import floor
+from osgeo import gdal,ogr
+
+raster_geotiff_filename = 'test.tif'
+vector_shp_filename = 'test.shp'
+
+src_ds=gdal.Open(raster_geotiff_filename) 
+gt_forward=src_ds.GetGeoTransform()
+gt_reverse=gdal.InvGeoTransform(gt_forward)
+rb=src_ds.GetRasterBand(1)
+
+ds=ogr.Open(vector_shp_filename)
+lyr=ds.GetLayer()
+for feat in lyr:
+    geom = feat.GetGeometryRef()
+    feat_id = feat.GetField('id_points')
+    mx,my=geom.GetX(), geom.GetY()  #coord in map units
+
+    #Convert from map to pixel coordinates.
+    px, py = gdal.ApplyGeoTransform(gt_reverse, mx, my)
+    px = floor(px) #x pixel
+    py = floor(py) #y pixel
+
+    intval=rb.ReadAsArray(px,py,1,1)
+    li_values.append([feat_id, intval[0]])
+    print intval[0] #intval is a numpy array, length=1 as we only asked for 1 pixel value
+
+with open(r'/path.csv', 'w') as csvfile:
+    wr = csv.writer(csvfile)
+    wr.writerows(li_values)
