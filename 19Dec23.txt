@@ -1,0 +1,14 @@
+1) https://gis.stackexchange.com/questions/372035/find-closest-point-to-shapefile-coastline-in-python
+2) https://gis.stackexchange.com/questions/364058/finding-closest-point-to-shapefile-coastline-python/364082
+3) https://gis.stackexchange.com/questions/80881/what-is-unit-of-shapely-length-attribute
+4) https://pypi.org/project/haversine/
+5) https://stackoverflow.com/questions/76158983/closest-distance-between-polygons-in-shapefile-with-geopandas
+6) https://copyprogramming.com/howto/how-to-find-the-distance-to-the-nearest-coastline-from-a-land-based-latitude-longitude-point
+7) https://medium.com/analytics-vidhya/calculating-distances-from-points-to-polygon-borders-in-python-a-paris-example-3b597e1ea291
+8) https://github.com/geopandas/geopandas/issues/226
+9) https://github.com/kuanb/geopandas_opt
+10) https://pygis.io/docs/e_buffer_neighbors.html
+11) https://community.alteryx.com/t5/Alteryx-Designer-Desktop-Discussions/Calculating-distances-Using-a-Road-Network-Shapefile/td-p/571332
+12) https://medium.com/@callumjamesscoby/routing-shortest-path-analysis-in-python-and-qgis-39da55da5099
+13) https://automating-gis-processes.github.io/2017/lessons/L3/nearest-neighbour.html
+14) https://towardsdatascience.com/nearest-neighbor-analysis-for-large-datasets-in-helsinki-79ebc7288c91
