@@ -1,0 +1,25 @@
+Routing/Shortest Path Analysis in Python 
+Problem: How to go from A to B in the shortest possible distance or time?The Euclidean distance (or the as-the-crow-flies distance) 
+does not reflect real world movement- it doesn’t incorporate the network in real life to get from one place to another.
+
+Pre-requisite: Knowledge of loading data into QGIS, projections, and clipping.
+
+Code1:
+
+# pip install osmnx
+import osmnx as ox
+G = ox.graph_from_place('Leeds, UK', network_type = 'drive')
+# projected network (Gp) from below consists of thousands of nodes, or points & can be seen as list(Gp). 
+Gp = ox.project_graph(G)
+ox.plot_graph(Gp)
+ox.save_graph_geopackage(Gp, filepath="/home/Desktop/leeds_driving_network.gpkg")
+
+# find nodes which is closest to Point A or Point B using nearest_nodes from .
+X0 = 51.76022, -1.80555 # Point A
+X1 = 53.89806, -1.51252 # Point B
+
+node = ox.nearest_nodes(Gp, X0, X1)
+
+X0_node = [i for i, x in enumerate(list(Gp)) if x == node[0]]
+X1_node = [i for i, x in enumerate(list(Gp)) if x == node[1]]
+print(X0_node, X1_node)
