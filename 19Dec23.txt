@@ -12,3 +12,5 @@
 12) https://medium.com/@callumjamesscoby/routing-shortest-path-analysis-in-python-and-qgis-39da55da5099
 13) https://automating-gis-processes.github.io/2017/lessons/L3/nearest-neighbour.html
 14) https://towardsdatascience.com/nearest-neighbor-analysis-for-large-datasets-in-helsinki-79ebc7288c91
+15) https://medium.com/analytics-vidhya/python-for-geosciences-raster-merging-clipping-and-reprojection-with-rasterio-9f05f012b88a
+16) https://github.com/microsoft/PlanetaryComputerExamples/blob/main/tutorials/reprojection.ipynb
