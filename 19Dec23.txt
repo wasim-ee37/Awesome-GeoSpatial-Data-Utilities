@@ -14,3 +14,4 @@
 14) https://towardsdatascience.com/nearest-neighbor-analysis-for-large-datasets-in-helsinki-79ebc7288c91
 15) https://medium.com/analytics-vidhya/python-for-geosciences-raster-merging-clipping-and-reprojection-with-rasterio-9f05f012b88a
 16) https://github.com/microsoft/PlanetaryComputerExamples/blob/main/tutorials/reprojection.ipynb
+17) https://stackoverflow.com/questions/6785226/pass-multiple-parameters-to-concurrent-futures-executor-map
