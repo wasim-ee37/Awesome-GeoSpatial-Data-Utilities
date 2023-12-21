@@ -17,4 +17,7 @@
 17) https://stackoverflow.com/questions/6785226/pass-multiple-parameters-to-concurrent-futures-executor-map
 18) https://gis.stackexchange.com/questions/349447/convert-geodataframe-to-raster
 19) https://www.linkedin.com/pulse/rasterize-polygons-geopandas-geocube-chonghua-yin
-20) 
+20) https://spatial-dev.guru/2022/09/03/rasterize-vector-data-using-geopandas-and-geocube/
+21) https://gis.stackexchange.com/questions/448949/creating-geotiff-from-pandas-dataframe
+22) https://corteva.github.io/geocube/stable/examples/rasterize_function.html
+23) https://corteva.github.io/geocube/stable/examples/rasterize_point_data.html
