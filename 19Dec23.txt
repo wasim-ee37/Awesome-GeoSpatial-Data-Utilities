@@ -21,3 +21,10 @@
 21) https://gis.stackexchange.com/questions/448949/creating-geotiff-from-pandas-dataframe
 22) https://corteva.github.io/geocube/stable/examples/rasterize_function.html
 23) https://corteva.github.io/geocube/stable/examples/rasterize_point_data.html
+24) https://stackoverflow.com/questions/71685387/faster-methods-to-create-geodataframe-from-a-dask-or-pandas-dataframe
+25) https://stackoverflow.com/questions/30740046/calculate-distance-to-nearest-feature-with-geopandas/32662259 --- latest useful
+26) https://github.com/geopandas/geopandas/issues/226
+27) https://github.com/kuanb/geopandas_opt/blob/master/faster.ipynb
+28) https://gps2space.readthedocs.io/en/latest/measuring_distance.html -- useful
+29) https://gis.stackexchange.com/questions/342433/calculating-distance-from-polygon-to-point
+30) https://stackoverflow.com/questions/76158983/closest-distance-between-polygons-in-shapefile-with-geopandas
