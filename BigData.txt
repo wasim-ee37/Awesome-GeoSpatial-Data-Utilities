@@ -1,0 +1,60 @@
+1) https://stackoverflow.com/questions/14351255/techniques-for-working-with-large-numpy-arrays
+2) https://stackoverflow.com/questions/14372613/efficient-creation-of-numpy-arrays-from-list-comprehension-and-in-general/14372746#14372746
+3) https://medium.com/geekculture/processing-large-numeric-arrays-in-python-part-i-94b5fd46390f
+4) https://dgolovin-dev.github.io/article-processing-big-numeric-arrays-in-python/
+5) https://kipling.medium.com/big-data-arrays-with-python-2d3de2babdf9
+6) https://examples.dask.org/array.html
+7) https://medium.com/@devesh.vishwakarma.ml/beginners-guide-to-dask-arrays-14535d221e7e
+8) http://earthpy.org/dask.html
+9) https://coderzcolumn.com/tutorials/python/dask-array-guide-to-work-with-large-arrays-in-parallel ---- important
+10) https://napari.org/stable/tutorials/processing/dask.html ----- for viewing dataset
+11) https://dask-local.readthedocs.io/en/latest/examples/array-hdf5.html
+12) https://dask-local.readthedocs.io/en/latest/array-slicing.html
+13) https://github.com/dask/dask/issues/1777
+14) https://docs.dask.org/en/stable/best-practices.html
+15) https://python.plainenglish.io/cracking-the-dask-code-a-step-by-step-guide-fa121ea1bd86  ----- important
+16) https://docs.dask.org/en/latest/array-creation.html
+17) https://github.com/dask/dask/issues/7589 --- apply a custom function to a dask array
+18) https://stackoverflow.com/questions/36275052/applying-a-function-along-an-axis-of-a-dask-array  ----- apply a custom function to a dask array
+19) https://dask.discourse.group/t/processing-array-subregions/1728/3 ---- masked Array
+20) https://blog.dask.org/2019/06/20/load-image-data ------ important
+21) https://blog.dask.org/2021/03/19/image-segmentation ----- important
+22) https://stackoverflow.com/questions/72015205/iterating-through-dask-array-chunks ------ iterating over chunks in dask array
+23) https://stackoverflow.com/questions/74033814/problem-computing-chunk-size-of-dask-array-after-dask-image-imread
+24) https://github.com/dask/dask-image/issues/181
+25) https://docs.dask.org/en/latest/array-chunks.html
+26) https://matthewrocklin.com/blog/work/2016/02/26/dask-distributed-part-3  -------- detailed time profiling
+27) https://towardsdatascience.com/dask-arrays-how-to-parallelize-numpy-with-ease-b33d7e9dcb59
+28) https://dask.discourse.group/t/simple-parallelism-with-numpy-and-ctypes-functions/1123
+29) https://matthewrocklin.com/blog/work/2019/01/03/dask-array-gpus-first-steps -------- time profiling
+30) https://docs.dask.org/en/stable/generated/dask.array.map_blocks.html --- map_blocks
+31) https://docs.dask.org/en/latest/array-overlap.html
+32) https://tutorial.dask.org/02_array.html
+33) https://docs.dask.org/en/stable/10-minutes-to-dask.html --- dask tutorial
+34) https://docs.dask.org/en/stable/array.html --- dask array tut
+35) https://confluence.slac.stanford.edu/display/LCLSIIData/DASK?focusedCommentId=410100719 ---- VVI
+
+
+
+----------------------
+19/01/24
+
+1) Dask Arrays - parallelized numpy: https://tutorial.dask.org/02_array.html
+2) Diagnostics (local) on DASK(scheduler): https://docs.dask.org/en/stable/diagnostics-local.html
+3) dask.delayed - parallelize any code: https://tutorial.dask.org/03_dask.delayed.html
+4) https://github.com/mkhoshle/MDAnalysis-with-Dask/tree/master
+5) https://github.com/dask/dask/issues/2227
+6) https://dask.pydata.org/en/latest/array-creation.html#chunks
+7) https://stackoverflow.com/questions/63576132/how-to-load-a-big-numpy-array-from-a-text-file-with-dask
+8) https://blog.dask.org/2019/06/20/load-image-data
+9) https://medium.com/@reddyyashu20/dask-from-scratch-to-scalable-analytics-in-python-723e0d88c2ff
+10) https://towardsdatascience.com/pandas-with-dask-for-an-ultra-fast-notebook-e2621c3769f
+11) https://github.com/dask/dask-image/issues/181
+12) https://napari.org/stable/tutorials/processing/dask.html
+13) https://github.com/naikshubham/Parallel-Programming-in-Python/blob/master/Dask/code/Dask.ipynb
+
+14) https://github.com/naikshubham/Parallel-Programming-in-Python/tree/master
+15) https://examples.dask.org/applications/image-processing.html
+16) https://github.com/dask/dask-tutorial/blob/main/00_overview.ipynb
+17) https://github.com/dask/dask/issues/7589
+18) https://stephanhoyer.com/2015/06/11/xray-dask-out-of-core-labeled-arrays/
